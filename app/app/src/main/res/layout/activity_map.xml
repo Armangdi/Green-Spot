@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.naver.maps.map.MapView
+        app:navermap_latitude="37.293937"
+        app:navermap_longitude="126.975437"
+        android:id="@+id/map_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <Button
+        android:backgroundTint="#d96b67"
+        android:id="@+id/btn_near"
+        android:text="Nearest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/btn_view"
+        app:layout_constraintEnd_toStartOf="@id/btn_view"
+        app:layout_constraintStart_toStartOf="parent"
+
+        ></Button>
+
+    <Button
+        android:id="@+id/btn_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#d96b67"
+        android:text="View"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_dark"
+        app:layout_constraintStart_toEndOf="@id/btn_near"
+        ></Button>
+
+    <Button
+        android:id="@+id/btn_dark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/black"
+        android:text="Dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_current"
+        app:layout_constraintStart_toEndOf="@id/btn_view"></Button>
+    <Button
+        android:backgroundTint="#d96b67"
+        android:id="@+id/btn_current"
+        android:text="Current"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/btn_dark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btn_dark"
+        ></Button>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
