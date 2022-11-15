@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/reviewpercent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="POSITIVE 100%"
+
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/writtendate"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="20dp"
+
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/writtendate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2022.8.23"
+
+        app:layout_constraintTop_toBottomOf="@id/reviewpercent"
+        app:layout_constraintStart_toStartOf="@id/reviewpercent"
+        app:layout_constraintBottom_toTopOf="@id/reviewcontents"
+        android:layout_marginTop="3dp"
+        android:textColor="@color/lightgrey"
+        android:textStyle="bold"
+        android:textSize="17sp"/>
+
+    <TextView
+        android:id="@+id/reviewcontents"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+
+        android:text="대학생에게 가성비 최고인 곳임... 진짜 여기 가고싶어서 금요일마다 오픈 시간에 기다림.. 사장님 이렇게 싸게 팔고 뭐가 남으세요??? 많이 팔고 행복하세요.."
+        android:textColor="@color/grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/writtendate"
+        app:layout_constraintTop_toBottomOf="@+id/writtendate" />
+
+    <ImageView
+        android:id="@+id/likereview"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        app:srcCompat="@drawable/like"
+        app:layout_constraintBottom_toTopOf="@id/reviewphoto"
+        app:layout_constraintEnd_toEndOf="@id/reviewphoto"
+        android:layout_marginBottom="5dp"
+        android:layout_marginEnd="5dp"/>
+
+    <ImageView
+        android:id="@+id/reviewphoto"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="16dp"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/reviewcontents"
+        app:layout_constraintTop_toTopOf="@id/reviewcontents"
+        app:srcCompat="@drawable/reviewphoto1" />
+
+    <TextView
+        android:id="@+id/photonum"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:text="+5"
+        android:textColor="@color/white"
+
+        android:background="@drawable/edgeblack"
+        app:layout_constraintBottom_toBottomOf="@id/reviewphoto"
+        app:layout_constraintEnd_toEndOf="@id/reviewphoto"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

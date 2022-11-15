@@ -30,8 +30,11 @@ public interface MySimpleContract {
     interface ContractForPresenter{
         void setMarkers(NaverMap naverMap);
         void onCurrentClicked(NaverMap naverMap);
-        int onDarkClicked(NaverMap naverMap);
+        void onListClicked(NaverMap naverMap);
         void onViewClicked(NaverMap naverMap);
+
+        void onSentiClicked(String content);
+
         void onLoginClicked(String id, String pw);
         void onSignClicked();
         void onSignUpClicked(String id, String pw);

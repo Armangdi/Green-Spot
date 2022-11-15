@@ -27,7 +27,7 @@ public class MapActivity extends AppCompatActivity implements MySimpleContract.C
     private NaverMap naverMap;
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1000;
     private FusedLocationSource locationSource;
-    private Button btn_current, btn_view, btn_dark;
+    private Button btn_current, btn_view, btn_list;
     private int dark;
 
     @Override
@@ -50,7 +50,7 @@ public class MapActivity extends AppCompatActivity implements MySimpleContract.C
 
         btn_current = findViewById(R.id.btn_current);
         btn_view = findViewById(R.id.btn_view);
-        btn_dark = findViewById(R.id.btn_dark);
+        btn_list = findViewById(R.id.btn_list);
         presenter.setMarkers(naverMap);
         btn_current.setOnClickListener(view -> {
             presenter.onCurrentClicked(naverMap);
@@ -59,16 +59,8 @@ public class MapActivity extends AppCompatActivity implements MySimpleContract.C
         btn_view.setOnClickListener(view -> {
             presenter.onViewClicked(naverMap);
         });
-        btn_dark.setOnClickListener(view -> {
-            dark = presenter.onDarkClicked(naverMap);
-            if(dark == 1){
-                btn_dark.setBackgroundColor(Color.WHITE);
-                btn_dark.setTextColor(Color.BLACK);
-            }
-            else if(dark == 0){
-                btn_dark.setBackgroundColor(Color.BLACK);
-                btn_dark.setTextColor(Color.WHITE);
-            }
+        btn_list.setOnClickListener(view -> {
+            presenter.onListClicked(naverMap);
         });
 
         mapView.getMapAsync(this);

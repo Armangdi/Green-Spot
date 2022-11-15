@@ -151,18 +151,9 @@ public class MySimplePresenter implements MySimpleContract.ContractForPresenter{
     }
 
     @Override
-    public int onDarkClicked(NaverMap naverMap){
-        naverMap.setMapType(NaverMap.MapType.Navi);
-        map_mode = 1;
-        if(dark == 0){
-            naverMap.setNightModeEnabled(true);
-            dark++;
-        }
-        else{
-            naverMap.setNightModeEnabled(false);
-            dark--;
-        }
-        return dark;
+    public void onListClicked(NaverMap naverMap){
+        Intent intent = new Intent(model.getActivity(), ListActivity.class);
+        model.getActivity().startActivity(intent);
     }
 
     @Override
@@ -185,6 +176,55 @@ public class MySimplePresenter implements MySimpleContract.ContractForPresenter{
                 naverMap.setMapType(NaverMap.MapType.Terrain);
                 break;
         }
+    }
+
+    @Override
+    public void onSentiClicked(String content) {
+        OkHttpClient client = new OkHttpClient();
+        DataModel dataModel = new DataModel();
+
+        Gson gson = new Gson();
+        dataModel.setContent(content);
+
+        String json = gson.toJson(dataModel, DataModel.class);
+        HttpUrl.Builder urlBuilder = HttpUrl.parse("https://naveropenapi.apigw.ntruss.com/sentiment-analysis/v1/analyze").newBuilder();
+        String url = urlBuilder.build().toString();
+
+        Request req = new Request.Builder()
+                .url(url)
+                .post(RequestBody.create(MediaType.parse("application/json"),json))
+                .build();
+
+        client.newCall(req).enqueue(new Callback() {
+            @Override
+            public void onFailure(@NonNull Call call, @NonNull IOException e) {
+                e.printStackTrace();
+            }
+
+            @Override
+            public void onResponse(@NonNull Call call, @NonNull Response response) throws IOException {
+                final String myResponse = response.body().string();
+                Gson gson = new GsonBuilder().create();
+                final DataModel data1 = gson.fromJson(myResponse,  DataModel.class);
+                model.getActivity().runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        if(data1.getSuccess()){
+                            Toast.makeText(model.getActivity(),"Login Success!", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(model.getActivity(), MapActivity.class);
+                            model.getActivity().startActivity(intent);
+                        }
+                        else{
+                            Toast.makeText(model.getActivity(),"Login Failed!", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
+            }
+
+        });
+
+
     }
 
     @Override
