@@ -4,6 +4,15 @@ public class DataModel {
     private String name;
     private String passwd;
     private Boolean success;
+    private String content;
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
 
     public Boolean getSuccess() {
         return success;
