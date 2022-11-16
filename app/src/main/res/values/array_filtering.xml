@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="array_filtering">
-        <item>필터링 무관</item>
+        <item>필터링 없음</item>
         <item>혼밥하기 좋은</item>
         <item>공부하기 좋은</item>
         <item>데이트 하기 좋은</item>
