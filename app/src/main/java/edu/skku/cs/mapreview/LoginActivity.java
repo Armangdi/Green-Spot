@@ -1,15 +1,25 @@
 package edu.skku.cs.mapreview;
 
+import static android.content.ContentValues.TAG;
+
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.naver.maps.map.overlay.Marker;
 
 public class LoginActivity extends AppCompatActivity
@@ -20,6 +30,7 @@ public class LoginActivity extends AppCompatActivity
     private Button btn_login, btn_signup;
     private EditText edit_id, edit_pw;
     private ImageView imageView;
+    private FirebaseAuth mAuth;
     @Override
     public void setMarker(Marker marker, double lat, double lon, int resourceID){}
     @Override
@@ -62,10 +73,34 @@ public class LoginActivity extends AppCompatActivity
 
     @Override
     public void onLoginResult(Boolean result) {
-        //btn.setText("Value: " + value); // update UI
-        if(!result){
-            Toast.makeText(this, "Yaho!", Toast.LENGTH_SHORT).show();
+        EditText e_mail = (EditText) findViewById(R.id.edit_id);
+        EditText pw = (EditText) findViewById(R.id.edit_pw);
+        String email = e_mail.getText().toString();
+        String password = pw.getText().toString();
+        if (email.length() == 0 || password.length() == 0) {
+            Toast.makeText(getApplicationContext(), "빈 항목이 없어야합니다", Toast.LENGTH_LONG).show();
+            return;
         }
+
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            Log.d(TAG, "signInWithEmail:success");
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            Intent intent = new Intent(getApplicationContext(), MapActivity.class);
+                            startActivity(intent);
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Log.w(TAG, "signInWithEmail:failure", task.getException());
+                            Toast.makeText(getApplicationContext(), "Authentication failed.",
+                                    Toast.LENGTH_SHORT).show();
+
+                        }
+                    }
+                });
     }
 
     @Override
