@@ -5,6 +5,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -30,6 +31,8 @@ public class MapActivity extends AppCompatActivity implements MySimpleContract.C
     private Button btn_current, btn_view, btn_list;
     private int dark;
 
+    private ImageButton btn_plus, btn_menu;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +50,16 @@ public class MapActivity extends AppCompatActivity implements MySimpleContract.C
 
         locationSource = new FusedLocationSource(this, LOCATION_PERMISSION_REQUEST_CODE);
         mapView.onCreate(savedInstanceState);
+
+
+        btn_plus = findViewById(R.id.btn_plus);
+        btn_plus.setOnClickListener(view -> {
+            presenter.onPlusClicked(naverMap);
+        });
+        btn_menu = findViewById(R.id.menubtn);
+        btn_menu.setOnClickListener(view -> {
+            presenter.onMenuClicked(naverMap);
+        });
 
         /*
         btn_current = findViewById(R.id.btn_current);
