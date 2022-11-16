@@ -1,21 +1,29 @@
 package edu.skku.cs.mapreview;
 
 import android.os.Bundle;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.naver.maps.map.overlay.Marker;
+
 import java.util.ArrayList;
 
-public class ListActivity extends AppCompatActivity {
+public class ListActivity extends AppCompatActivity implements MySimpleContract.ContractForView {
     private ListView listview;
     private ListViewAdapter listviewadapter;
     private ArrayList<Review> items;
+    private ImageView btn_write;
+    private MySimplePresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.restlistview);
+
+        presenter = new MySimplePresenter(this, new MySimpleModel(presenter, ListActivity.this));
 
         listview = findViewById(R.id.restaurantlist);
         items = new ArrayList<Review>();
@@ -25,5 +33,25 @@ public class ListActivity extends AppCompatActivity {
         listviewadapter = new ListViewAdapter(items, getApplicationContext());
 
         listview.setAdapter(listviewadapter);
+
+        btn_write = findViewById(R.id.imagewrite);
+        btn_write.setOnClickListener(view -> {
+            presenter.onWriteClicked();
+        });
+    }
+
+    @Override
+    public void setMarker(Marker marker, double lat, double lon, int resourceID) {
+
+    }
+
+    @Override
+    public void onLoginResult(Boolean result) {
+
+    }
+
+    @Override
+    public void displayValue(int value) {
+
     }
 }

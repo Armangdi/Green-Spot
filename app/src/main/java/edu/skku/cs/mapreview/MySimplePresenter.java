@@ -149,10 +149,34 @@ public class MySimplePresenter implements MySimpleContract.ContractForPresenter{
 
          */
     }
+    @Override
+    public void onPlusClicked(NaverMap naverMap){
+        Intent intent = new Intent(model.getActivity(), ReviewWrite.class);
+        model.getActivity().startActivity(intent);
+    }
+
+    @Override
+    public void onMenuClicked(NaverMap naverMap){
+        Intent intent = new Intent(model.getActivity(), ListActivity.class);
+        model.getActivity().startActivity(intent);
+    }
+
+    @Override
+    public void onBackClicked(){
+        Intent intent = new Intent(model.getActivity(), MapActivity.class);
+        model.getActivity().startActivity(intent);
+    }
+
 
     @Override
     public void onListClicked(NaverMap naverMap){
         Intent intent = new Intent(model.getActivity(), ListActivity.class);
+        model.getActivity().startActivity(intent);
+    }
+
+    @Override
+    public void onWriteClicked(){
+        Intent intent = new Intent(model.getActivity(), AddWriteActivity.class);
         model.getActivity().startActivity(intent);
     }
 
