@@ -18,12 +18,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
-    <ImageView
+    <ImageButton
         android:id="@+id/imagewrite"
-        android:layout_width="23dp"
-        android:layout_height="23dp"
-        app:srcCompat="@drawable/edit"
-
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/edit_xml"
+        android:background="@color/transparent"
         app:layout_constraintTop_toTopOf="@id/restaurantname"
         app:layout_constraintBottom_toBottomOf="@id/restaurantname"
         app:layout_constraintStart_toEndOf="@id/restaurantname"
@@ -101,31 +101,6 @@
         app:layout_constraintBottom_toBottomOf="@id/imageclock"
         app:layout_constraintStart_toEndOf="@id/imageclock"/>
 
-    <ImageView
-        android:id="@+id/imagemenu"
-        app:srcCompat="@drawable/menu"
-
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imageclock"
-        android:layout_marginTop="13dp"
-        android:layout_marginStart="15dp"/>
-
-    <TextView
-        android:id="@+id/menuphoto"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="메뉴판 사진"
-        android:textColor="@color/black"
-
-        android:textSize="15sp"
-        android:textStyle="bold"
-        android:layout_marginStart="12dp"
-        app:layout_constraintTop_toTopOf="@id/imagemenu"
-        app:layout_constraintBottom_toBottomOf="@id/imagemenu"
-        app:layout_constraintStart_toEndOf="@id/imagemenu"
-        />
 
     <ImageView
         android:id="@+id/imagelike"
@@ -133,7 +108,7 @@
         android:layout_height="20dp"
         app:srcCompat="@drawable/like"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/imagemenu"
+        app:layout_constraintTop_toBottomOf="@id/businesshour"
         android:layout_marginTop="13dp"
         android:layout_marginStart="15dp"
         android:layout_marginBottom="10dp"/>
@@ -160,7 +135,6 @@
         android:textSize="15sp"
         android:textStyle="bold"
         android:layout_marginStart="12dp"
-
         app:layout_constraintTop_toTopOf="@id/imagelike"
         app:layout_constraintBottom_toBottomOf="@id/imagelike"
         app:layout_constraintStart_toEndOf="@id/imagelike"
@@ -171,7 +145,6 @@
         android:id="@+id/restaurantlist"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-
         android:layout_marginTop="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

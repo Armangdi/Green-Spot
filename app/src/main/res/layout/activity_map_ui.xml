@@ -12,7 +12,7 @@
         android:layout_height="0dp"
         android:orientation="horizontal"
         android:layout_weight="1"
-        >
+        android:background="@color/white">
 
 
         <ImageButton
@@ -42,13 +42,14 @@
         android:layout_height="0dp"
         android:layout_weight="10">
 
+        <!--
         <com.naver.maps.map.MapView
             app:navermap_latitude="37.293937"
             app:navermap_longitude="126.975437"
             android:id="@+id/map_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            tools:layout="@android:layout/activity_list_item" />
+            tools:layout="@android:layout/activity_list_item" /> -->
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -113,15 +114,33 @@
             android:layout_height="50dp"
             android:layout_gravity="bottom|end"
             android:layout_marginEnd="30dp"
-            android:layout_marginBottom="60dp">
+            android:layout_marginBottom="120dp">
 
 
             <ImageButton
                 android:id="@+id/imageButton"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:srcCompat="@drawable/add_white_icon"
+                android:src="@drawable/list_bulleted"
                 android:background="@drawable/plus_btn"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="60dp">
+
+
+            <ImageButton
+                android:id="@+id/imageButton3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/add_white_icon"
+                android:background="@drawable/plus_btn"/>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 

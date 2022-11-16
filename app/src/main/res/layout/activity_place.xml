@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/white">
+
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:src="@drawable/back_btn"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/restaurantname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="사담"
+            android:textSize="25dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="30dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageButton
+            android:id="@+id/imagewrite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/edit_xml"
+            android:background="@color/transparent"
+            app:layout_constraintTop_toTopOf="@id/restaurantname"
+            app:layout_constraintBottom_toBottomOf="@id/restaurantname"
+            app:layout_constraintStart_toEndOf="@id/restaurantname"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="20dp"/>
+
+        <TextView
+            android:id="@+id/category1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="분위기"
+            android:textColor="@color/black"
+            android:background="@drawable/edgedesign"
+            android:padding="8dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+
+            android:layout_marginTop="25dp"
+            app:layout_constraintTop_toBottomOf="@id/restaurantname"
+            app:layout_constraintEnd_toStartOf="@id/category2"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/category2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="디저트맛집"
+            android:textColor="@color/black"
+            android:background="@drawable/edgedesign"
+            android:padding="8dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+
+            app:layout_constraintTop_toTopOf="@id/category1"
+            app:layout_constraintStart_toEndOf="@id/category1"
+            app:layout_constraintEnd_toStartOf="@id/category3"/>
+
+        <TextView
+            android:id="@+id/category3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="가성비"
+            android:textColor="@color/black"
+            android:background="@drawable/edgedesign"
+            android:padding="8dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+
+            app:layout_constraintTop_toTopOf="@id/category1"
+            app:layout_constraintStart_toEndOf="@id/category2"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ImageView
+            android:id="@+id/imageclock"
+            app:srcCompat="@drawable/clock"
+
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/category1"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="15dp"/>
+
+        <TextView
+            android:id="@+id/businesshour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="매일 10:00 - 20:00"
+            android:textColor="@color/black"
+
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginStart="12dp"
+            app:layout_constraintTop_toTopOf="@id/imageclock"
+            app:layout_constraintBottom_toBottomOf="@id/imageclock"
+            app:layout_constraintStart_toEndOf="@id/imageclock"/>
+
+
+        <ImageView
+            android:id="@+id/imagelike"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:srcCompat="@drawable/like"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/businesshour"
+            android:layout_marginTop="13dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginBottom="10dp"/>
+
+        <ImageView
+            android:id="@+id/line"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="15dp"
+            android:src="@drawable/d9d9d9"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/percent" />
+
+        <TextView
+            android:id="@+id/percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="POSTIVE 92%"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:layout_marginStart="12dp"
+            app:layout_constraintTop_toTopOf="@id/imagelike"
+            app:layout_constraintBottom_toBottomOf="@id/imagelike"
+            app:layout_constraintStart_toEndOf="@id/imagelike"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:background="@color/white">
+
+        <ListView
+            android:id="@+id/restaurantlist"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
