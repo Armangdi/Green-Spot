@@ -1,50 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
-    <EditText
-    android:id="@+id/edit_id"
-    android:layout_width="200dp"
-    android:layout_height="wrap_content"
-    android:hint="ID"
-    app:layout_constraintBottom_toTopOf="@id/edit_pw"
-    app:layout_constraintStart_toStartOf="@id/guideline2"
-    app:layout_constraintTop_toTopOf="@id/guideline3" />
-
-    <EditText
-        android:id="@+id/edit_pw"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:hint="PASSWORD"
-        app:layout_constraintStart_toStartOf="@id/guideline2"
-        app:layout_constraintTop_toBottomOf="@id/edit_id" />
+    android:layout_height="match_parent">
 
 
-    <Button
-        android:id="@+id/btn_sign"
-        android:layout_width="95dp"
-        android:layout_height="0dp"
-        android:backgroundTint="#d96b67"
-        android:text="sign up"
-        app:layout_constraintBottom_toBottomOf="@id/edit_pw"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/edit_pw"
-        app:layout_constraintTop_toTopOf="@id/edit_id" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.11" />
+        android:background="@color/brightgreen"
+        >
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.43" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2">
 
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Green Spot"
+                android:textStyle="bold"
+                android:textColor="#616F4E"
+                android:textSize="40dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="4">
+
+            <EditText
+                android:id="@+id/stu_email"
+                android:layout_width="280dp"
+                android:layout_height="35dp"
+                android:background="@drawable/signin_input"
+                android:ems="10"
+                android:hint="e-mail (ID@skku.edu)"
+                android:inputType="number"
+                android:paddingHorizontal="15dp"
+                android:layout_marginVertical="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/input_password"
+                android:layout_width="280dp"
+                android:layout_height="35dp"
+                android:background="@drawable/signin_input"
+                android:hint="Confirm Password"
+                android:inputType="textPassword"
+                android:paddingHorizontal="15dp"
+                android:layout_marginVertical="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/stu_email" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_signup"
+                android:text="LOG IN"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:paddingHorizontal="15dp"
+                android:layout_marginVertical="50dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/input_password" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
