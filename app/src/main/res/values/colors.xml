@@ -13,4 +13,14 @@
     <color name="lightgreen">#C7F2A4</color>
     <color name="whitegreen">#E1FFB1</color>
     <color name="yellowgreen">#FCFFB2</color>
+
+    <color name="brightgray">#FFD9D9D9</color>
+    <color name="transparent">#00000000</color>
+    <color name="darkgray">#FF494949</color>
+    <color name="yellow">#FCFFB2</color>
+    <color name="darkgreen">#B6E388</color>
+    <color name="green">#C7F2A4</color>
+    <color name="brightgreen">#E1FFB1</color>
+    <color name="palegreen">#F8FDF3</color>
+    <color name="deepgreen">#43533F</color>
 </resources>
