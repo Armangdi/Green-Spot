@@ -42,8 +42,10 @@
         android:layout_height="0dp"
         android:layout_weight="10">
 
-        <fragment
-            android:id="@+id/map"
+        <com.naver.maps.map.MapView
+            app:navermap_latitude="37.293937"
+            app:navermap_longitude="126.975437"
+            android:id="@+id/map_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:layout="@android:layout/activity_list_item" />

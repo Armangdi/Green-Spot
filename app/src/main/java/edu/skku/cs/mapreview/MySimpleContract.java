@@ -32,7 +32,8 @@ public interface MySimpleContract {
         void onCurrentClicked(NaverMap naverMap);
         void onListClicked(NaverMap naverMap);
         void onViewClicked(NaverMap naverMap);
-
+        void onFirstLoginClicked();
+        void onFirstSignClicked();
         void onSentiClicked(String content);
 
         void onLoginClicked(String id, String pw);

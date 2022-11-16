@@ -157,6 +157,17 @@ public class MySimplePresenter implements MySimpleContract.ContractForPresenter{
     }
 
     @Override
+    public void onFirstLoginClicked(){
+        Intent intent = new Intent(model.getActivity(), LoginActivity.class);
+        model.getActivity().startActivity(intent);
+    }
+
+    @Override
+    public void onFirstSignClicked(){
+        //signup something
+    }
+
+    @Override
     public void onViewClicked(NaverMap naverMap){
         map_mode = (map_mode + 1) % 5;
         switch(map_mode){

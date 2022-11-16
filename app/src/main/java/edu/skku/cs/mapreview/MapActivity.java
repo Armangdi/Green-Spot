@@ -33,7 +33,7 @@ public class MapActivity extends AppCompatActivity implements MySimpleContract.C
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_map);
+        setContentView(R.layout.activity_map_ui);
         decorView = getWindow().getDecorView();
         uiOption = getWindow().getDecorView().getSystemUiVisibility();
         if( Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH )
@@ -48,6 +48,7 @@ public class MapActivity extends AppCompatActivity implements MySimpleContract.C
         locationSource = new FusedLocationSource(this, LOCATION_PERMISSION_REQUEST_CODE);
         mapView.onCreate(savedInstanceState);
 
+        /*
         btn_current = findViewById(R.id.btn_current);
         btn_view = findViewById(R.id.btn_view);
         btn_list = findViewById(R.id.btn_list);
@@ -62,6 +63,7 @@ public class MapActivity extends AppCompatActivity implements MySimpleContract.C
         btn_list.setOnClickListener(view -> {
             presenter.onListClicked(naverMap);
         });
+        */
 
         mapView.getMapAsync(this);
     }
